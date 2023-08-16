@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-purple p-3">
   <div class="container-fluid">
     <%= link_to '#' do %>
-      <%= image_tag 'logo.png', alt: "TranstalentsTH", width: '90rem' %>
+      <%= image_tag 'logo.png', alt: "TranstalentsTH", width: "80vh" %>
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,9 +17,15 @@
             Our Services
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Blog</a></li>
-            <li><a class="dropdown-item" href="#">About Us</a></li>
-            <li><a class="dropdown-item" href="#">Contact us</a></li>
+            <li>
+              <%= link_to "Consult", "#", class: "dropdown-item" %>
+            </li>
+            <li>
+              <%= link_to "Training", "#", class: "dropdown-item" %>
+            </li>
+            <li>
+              <%= link_to "Speakers", "#", class: "dropdown-item" %>
+            </li>
           </ul>
         </li>
         <li class="nav-item">

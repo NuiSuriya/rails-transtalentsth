@@ -15,6 +15,19 @@
   background: $purple;
 }
 
+.dropdown-item {
+  text-align: center;
+  color: white;
+  &:hover {
+    color: $violet;
+  }
+}
+
+.dropdown-menu {
+  background: $violet;
+  border-radius: 3px;
+}
+
 nav{
   font-family: 'Poppins';
   font-weight: 400;
