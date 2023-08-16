@@ -1,0 +1,16 @@
+#btn-get-in-touch {
+  background: $pink;
+  border-radius: 100px;
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  &:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, $pink 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+}
+
+
