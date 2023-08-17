@@ -2,42 +2,52 @@
   <div class="container py-3">
     <div class="row align-items-center">
       <div class="col-md-2 col-4">
-        <%= image_tag 'IBM.png', alt: 'IBM', class: 'img-fluid' %>
+        <%#= image_tag 'IBM.png', alt: 'IBM', class: 'img-fluid' %>
+        <%= cl_image_tag("https://res.cloudinary.com/dzaswsutb/image/upload/v1692269203/IBM_rh4gag.png",
+          alt: 'IBM', class: 'img-fluid') %>
       </div>
       <div class="col-md-2 col-4">
-        <%= image_tag 'Marriot.png', alt: 'Marriott', class: 'img-fluid' %>
+        <%#= image_tag 'Marriot.png', alt: 'Marriott', class: 'img-fluid' %>
+        <%= cl_image_tag("https://res.cloudinary.com/dzaswsutb/image/upload/v1692269203/Marriot_x0nx0d.png",
+          alt: 'Marriott', class: 'img-fluid') %>
       </div>
       <div class="col-md-2 col-4">
-        <%= image_tag 'exxon.png', alt: 'Exxon', class: 'img-fluid' %>
+        <%#= image_tag 'exxon.png', alt: 'Exxon', class: 'img-fluid' %>
+        <%= cl_image_tag("https://res.cloudinary.com/dzaswsutb/image/upload/v1692269203/exxon_vpi2ym.png",
+            alt: 'Exxon', class: 'img-fluid') %>
       </div>
       <div class="col-md-2 col-4">
-        <%= image_tag 'foodpanda.png', alt: 'Foodpanda', class: 'img-fluid' %>
+        <%#= image_tag 'foodpanda.png', alt: 'Foodpanda', class: 'img-fluid' %>
+        <%= cl_image_tag("https://res.cloudinary.com/dzaswsutb/image/upload/v1692269203/foodpanda_hfgtc5.png",
+            alt: 'Foodpanda', class: 'img-fluid') %>
       </div>
       <div class="col-md-2 col-4">
-        <%= image_tag 'UN_woman.png', alt: 'UN Woman', class: 'img-fluid' %>
+        <%#= image_tag 'UN_woman.png', alt: 'UN Woman', class: 'img-fluid' %>
+        <%= cl_image_tag("https://res.cloudinary.com/dzaswsutb/image/upload/v1692269203/UN_woman_v5qccj.png",
+            alt: 'UN Woman', class: 'img-fluid') %>
       </div>
       <div class="col-md-2 col-4">
-        <%= image_tag 'transcareer.png', alt: 'transcareer', class: 'img-fluid' %>
+        <%#= image_tag 'transcareer.png', alt: 'transcareer', class: 'img-fluid' %>
+        <%= cl_image_tag("https://res.cloudinary.com/dzaswsutb/image/upload/v1692269203/transcareer_kk6wxj.png",
+            alt: 'transcareer', class: 'img-fluid') %>
       </div>
     </div>
   </div>
 </div>
-<%# <div class="counter" data-controller="counter"> %>
-<div id="counter">
-  <div data-controller="counter">
-    <div class="container counter pt-4 d-flex justify-content-center">
-      <div class="" style="margin-right: 60px">
-        <h1><span data-counter-target="value" data-target-number="150">0</span>K</h1>
-        <p>Audiences</p>
-      </div>
-      <div class="" style="margin-right: 40px">
-        <h1><span data-counter-target="value" data-target-number="22">0</span>+</h1>
-        <p>Projects</p>
-      </div>
-      <div>
-        <h1><span data-counter-target="value" data-target-number="5">0</span></h1>
-        <p>Countries</p>
-      </div>
+
+<div id="counter" data-controller="counter">
+  <div class="container counter pt-4 d-flex justify-content-center">
+    <div class="" style="margin-right: 60px">
+      <h1><span data-counter-target="value" data-target-number="150">0</span>K</h1>
+      <p>Audiences</p>
+    </div>
+    <div class="" style="margin-right: 40px">
+      <h1><span data-counter-target="value" data-target-number="22">0</span>+</h1>
+      <p>Projects</p>
+    </div>
+    <div>
+      <h1><span data-counter-target="value" data-target-number="5">0</span></h1>
+      <p>Countries</p>
     </div>
   </div>
 </div>

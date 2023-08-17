@@ -63,3 +63,24 @@
     opacity: 1;
   }
 }
+
+#service {
+  background: white;
+    h1{
+      color: $purple;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    h2{
+      font-weight: 700;
+    }
+
+    p{
+      font-weight: 400;
+    }
+    .card {
+      border: none;
+      border-radius: 20px;
+    }
+}
