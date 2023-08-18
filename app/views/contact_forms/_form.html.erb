@@ -7,13 +7,16 @@
       </div>
       <div id="contact-form" class="card mt-3 col-lg-6">
         <h1 class="mb-4">Contact us</h1>
-        <%= simple_form_for @contact_form do |f| %>
+        <%= simple_form_for @contact_form, data: {controller: 'sweet-alert'} do |f| %>
+          <%= f.error_notification %>
+
           <%= f.input :name,
                       label_html: {class: 'text-purple'},
-                      input_html: {class: 'form-input'} %>
+                      input_html: {class: 'form-input'}%>
+          <%=f.error :name  %>
           <%= f.input :email,
                       label_html: {class: 'text-purple'},
-                      input_html: {class: 'form-input'} %>
+                      input_html: {class: 'form-input'}%>
           <%= f.input :phone_number,
                       label_html: {class: 'text-purple'},
                       input_html: {class: 'form-input'} %>
@@ -25,9 +28,13 @@
           <%= f.input :message,
                       label_html: {class: 'text-purple'},
                       input_html: {class: 'form-input'} %>
-          <%= f.button :submit, "Submit", class: 'btn-submit' %>
+          <%= f.button :submit, "Submit",
+                      class: 'btn-submit',
+                      data: {action: 'click->sweet-alert#submitForm', turbo: false} %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%# , click->sweet-alert#submitForm %>
