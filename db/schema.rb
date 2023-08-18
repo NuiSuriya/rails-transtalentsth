@@ -10,8 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_18_175652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contact_forms", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "message"
+    t.string "phone_number"
+    t.bigint "message_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_category_id"], name: "index_contact_forms_on_message_category_id"
+  end
+
+  create_table "message_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "contact_forms", "message_categories"
 end
