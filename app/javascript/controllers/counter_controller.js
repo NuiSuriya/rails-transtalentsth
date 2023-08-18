@@ -9,7 +9,7 @@ export default class extends Controller {
 
   animateCount(target) {
     const targetNumber = parseInt(target.getAttribute("data-target-number"))
-    const speed = 300
+    const speed = 800
     const increment = targetNumber / speed
 
     let currentNumber = 0
