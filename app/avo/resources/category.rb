@@ -7,6 +7,7 @@ class Avo::Resources::Category < Avo::BaseResource
   def fields
     field :id, as: :id
     field :name, as: :text
-    field :blog_posts, as: :has_many
+    field :blog_posts, as: :has_many, attach_scope: -> { query.where.not(category_id:
+      parent.id).or(query.where(category_id: nil)) }
   end
 end
