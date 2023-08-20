@@ -78,3 +78,5 @@ group :test do
   gem "webdrivers"
 end
 gem "cloudinary"
+gem "avo", ">= 3.0.1.beta7", source: "https://packager.dev/avo-hq/"
+
