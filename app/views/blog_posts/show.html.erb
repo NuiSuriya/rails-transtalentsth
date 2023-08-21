@@ -1,0 +1,9 @@
+<div class="container my-3">
+  <h1 id="blog-title"><%= @blog_post.title %></h1>
+  <%#= sanitize @blog_post.content %>
+  <%#= sanitize @blog_post.content, tags: %w(p strong em), attributes: %w(style) %>
+
+  <div class="blog-content mt-5">
+    <%= @blog_post.content.html_safe %>
+  </div>
+</div>

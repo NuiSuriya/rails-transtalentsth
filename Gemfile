@@ -79,4 +79,5 @@ group :test do
 end
 gem "cloudinary"
 gem "avo", ">= 3.0.1.beta7", source: "https://packager.dev/avo-hq/"
-
+gem "activestorage"
+gem "image_processing"
