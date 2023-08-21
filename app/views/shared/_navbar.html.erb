@@ -38,21 +38,30 @@
           <%= link_to "Get in Touch", '#contact', class: 'nav-link mx-2 mt-1 text-white', id: 'btn-get-in-touch' %>
         </li>
 
-        <% if user_signed_in? %>
+        <% if user_signed_in?  && current_user.admin?%>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
             </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "Admin Panel", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+          </li>
+        <% elsif user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            </a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Action", "#", class: "dropdown-item" %>
+                <%= link_to "another action", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               </div>
           </li>
         <% else %>
-          <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
         <% end %>
       </ul>
     </div>
