@@ -9,9 +9,9 @@ class Avo::Resources::BlogPost < Avo::BaseResource
     field :title, as: :text, only_on: [:show, :new, :edit]
     field :excerpt, as: :text, only_on: :index, link_to_resource: true
     field :category, as: :belongs_to
-    field :photo, as: :file, is_image: true
-    field :content, as: :trix, attachment_key: :trix_attachments,
-          html: {}
+    field :photos, as: :files, are_images: true
+    field :vdo_url, as: :text, label: 'YouTube Video URL'
+    field :content, as: :trix, attachment_key: :trix_attachments
 
 
     field :writer, as: :text, only_on: [:show, :new, :edit]

@@ -10,6 +10,6 @@ class BlogPostsController < ApplicationController
   end
 
   def blog_post_params
-    params.require(:blog_post).permit(:title, :content, :writer, :min_to_read, :date, :category_id, :photo)
+    params.require(:blog_post).permit(:title, :content, :writer, :min_to_read, :date, :category_id, photos: [])
   end
 end
