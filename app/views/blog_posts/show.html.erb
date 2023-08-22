@@ -1,4 +1,7 @@
 <div class="container my-3">
+  <p><%= @blog_post.user.email %></p>
+  <p><%= @blog_post.date.strftime('%d %b')%></p>
+  <p><%= @blog_post.min_to_read %></p>
   <h1 id="blog-title"><%= @blog_post.title %></h1>
   <%#= sanitize @blog_post.content %>
   <%#= sanitize @blog_post.content, tags: %w(p strong em), attributes: %w(style) %>

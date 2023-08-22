@@ -2,6 +2,7 @@
 Avo.configure do |config|
   ## == Routing ==
   config.root_path = '/admin'
+  config.current_user_method = :current_user
   # used only when you have custom `map` configuration in your config.ru
   # config.prefix_path = "/internal"
 

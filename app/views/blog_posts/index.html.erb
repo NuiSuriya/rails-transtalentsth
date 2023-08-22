@@ -1,0 +1,3 @@
+<% @blog_posts.each do|post| %>
+  <%= link_to post.title.truncate(50), blog_post_path(post) %>
+<% end %>

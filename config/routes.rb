@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  mount Avo::Engine, at: Avo.configuration.root_path
-
+  authenticate :user, -> user { user.admin? } do
+    mount Avo::Engine, at: Avo.configuration.root_path
+  end
   devise_for :users
   devise_for :admins
 
@@ -15,5 +16,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :contact_forms, only: [:new, :create]
-  resources :blog_posts, only: [:show]
+  resources :blog_posts, only: [:index, :show]
 end

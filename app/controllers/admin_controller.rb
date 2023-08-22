@@ -9,7 +9,7 @@ class AdminController < ApplicationController
 
   def add_admin
     email = params[:email]
-    user = User.find_or_initailize_by(email: email)
+    user = User.find_or_initailize_by(email:)
 
     if user.save
       user.update(admin: true)
