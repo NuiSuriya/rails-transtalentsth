@@ -1,5 +1,5 @@
 #btn-get-in-touch {
-  background: $pink;
+  background: $blue;
   border-radius: 100px;
   color: white;
   padding-left: 25px;
@@ -7,15 +7,16 @@
   padding-top: 5px;
   padding-bottom: 5px;
   text-decoration: none;
+  font-size: 14px;
 
   &:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, $pink 0 -3px 0 inset;
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, $blue 0 -3px 0 inset;
     transform: translateY(-2px);
   }
 }
 
 #btn-get-in-touch-banner {
-  background: $pink;
+  background: $blue;
   border-radius: 100px;
   color: white;
   padding-left: 25px;
@@ -23,15 +24,16 @@
   padding-top: 5px;
   padding-bottom: 5px;
   text-decoration: none;
+  margin-top: 20px;
 
   &:hover {
-    box-shadow: #cccccc 0 4px 8px, $pink 0 -3px 0 inset;
+    box-shadow: #cccccc 0 4px 8px, $blue 0 -3px 0 inset;
     transform: translateY(-2px);
   }
 }
 
-.btn-pink {
-  background: $pink;
+.btn-blue {
+  background: $blue;
   border-radius: 100px;
   color: white;
   padding-left: 40px;
@@ -43,14 +45,14 @@
   &:hover {
     // box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, $pink 0 -3px 0 inset;
     transform: translateY(-2px);
-    background: $violet;
+    // background: $violet;
   }
 }
 
 .btn-submit {
-  background: $pink;
+  background: $light-blue;
   border-radius: 100px;
-  color: white;
+  color: $blue;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 5px;
@@ -60,7 +62,7 @@
   &:hover {
     // box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, $pink 0 -3px 0 inset;
     // transform: translateY(-2px);
-    background: $violet;
+    background: $blue;
     color: white
   }
 }

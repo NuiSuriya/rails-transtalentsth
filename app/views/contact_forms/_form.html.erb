@@ -2,7 +2,7 @@
   <div class="container pt-5 pb-4">
     <div class="row">
       <div class="col-lg-6 align-self-center">
-        <h1 class="pb-3 text-purple">Become the most inclusive business within your field.</h1>
+        <h1 class="pb-3 text-blue">Become the most inclusive business within your field.</h1>
         <p class="pb-sm-3">Start doing what is right for you and your employees. Contact us to discuss more about the consulting package that suit your organization best.</p>
       </div>
       <div id="contact-form" class="card mt-3 col-lg-6">
@@ -11,22 +11,22 @@
           <%= f.error_notification %>
 
           <%= f.input :name,
-                      label_html: {class: 'text-purple'},
+                      label_html: {class: 'text-blue'},
                       input_html: {class: 'form-input'}%>
           <%=f.error :name  %>
           <%= f.input :email,
-                      label_html: {class: 'text-purple'},
+                      label_html: {class: 'text-blue'},
                       input_html: {class: 'form-input'}%>
           <%= f.input :phone_number,
-                      label_html: {class: 'text-purple'},
+                      label_html: {class: 'text-blue'},
                       input_html: {class: 'form-input'} %>
           <%= f.association :message_category,
                       label: "What service are you looking for?",
-                      label_html: {class: 'text-purple'},
+                      label_html: {class: 'text-blue'},
                       input_html: {class: 'form-input'},
                       collection: MessageCategory.all %>
           <%= f.input :message,
-                      label_html: {class: 'text-purple'},
+                      label_html: {class: 'text-blue'},
                       input_html: {class: 'form-input'} %>
           <%= f.button :submit, "Submit",
                       class: 'btn-submit',

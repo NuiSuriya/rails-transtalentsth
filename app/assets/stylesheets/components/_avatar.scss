@@ -1,6 +1,11 @@
 .avatar {
-  width: 40px;
+  width: 40px !important;
+  height: 40px !important;
   border-radius: 50%;
+  background: $light-blue;
+  color: $blue;
+  font-weight: 500;
+  font-size: 1.4em;
 }
 .avatar-large {
   width: 56px;

@@ -11,28 +11,45 @@
   width: 40px;
 }
 
-.bg-purple {
-  background: $purple;
+#navbarDropdownMenuLink{
+  color: $blue
 }
 
 .dropdown-item {
   text-align: center;
-  color: white;
+  color: $blue;
   &:hover {
-    color: $violet;
+    color: $blue;
   }
 }
 
 .dropdown-menu {
-  background: $violet;
+  background: $light-blue;
+  font-size: 14px;
   border-radius: 3px;
+  border: none;
 }
 
 nav{
   font-family: 'Poppins';
+  color: $blue;
   font-weight: 400;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   line-height: normal;
+}
+
+.nav-link{
+  color: $blue;
+  font-size: 14px;
+  
+  &:hover{
+    font-weight: 600;
+    color: $blue;
+  }
+}
+
+.navbar-toggler {
+  background: $blue;
 }
