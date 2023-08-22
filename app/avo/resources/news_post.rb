@@ -6,12 +6,13 @@ class Avo::Resources::NewsPost < Avo::BaseResource
 
   def fields
     field :id, as: :id
-  field :title, as: :text
-  field :content, as: :textarea
-  field :date, as: :date
-  field :min_to_read, as: :number
-  field :vdo_url, as: :text
-  field :user, as: :belongs_to
-  field :category, as: :belongs_to
+    field :title, as: :text
+    field :content, as: :textarea
+    field :date, as: :date
+    field :min_to_read, as: :number
+    field :vdo_url, as: :text
+    field :user, as: :belongs_to
+    field :is_pinned, as: :boolean
+    field :category, as: :belongs_to
   end
 end
