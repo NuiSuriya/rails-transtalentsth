@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_21_234644) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_22_184522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,6 +91,35 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_234644) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "news_post_tags", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "news_post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["news_post_id"], name: "index_news_post_tags_on_news_post_id"
+    t.index ["tag_id"], name: "index_news_post_tags_on_tag_id"
+  end
+
+  create_table "news_posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.date "date"
+    t.integer "min_to_read"
+    t.string "vdo_url"
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_news_posts_on_category_id"
+    t.index ["user_id"], name: "index_news_posts_on_user_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -109,4 +138,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_234644) do
   add_foreign_key "blog_posts", "categories"
   add_foreign_key "blog_posts", "users"
   add_foreign_key "contact_forms", "message_categories"
+  add_foreign_key "news_post_tags", "news_posts"
+  add_foreign_key "news_post_tags", "tags"
+  add_foreign_key "news_posts", "categories"
+  add_foreign_key "news_posts", "users"
 end
