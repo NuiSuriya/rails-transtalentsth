@@ -13,6 +13,10 @@ module Avo
                                                           query.where.not(category_id:
           parent.id).or(query.where(category_id: nil))
                                                         }
+        field :news_posts, as: :has_many, attach_scope: lambda {
+                                                          query.where.not(category_id:
+          parent.id).or(query.where(category_id: nil))
+                                                        }
       end
     end
   end

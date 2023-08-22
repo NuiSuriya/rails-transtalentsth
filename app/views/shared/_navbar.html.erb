@@ -34,7 +34,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li>
-              <%= link_to "News", "#", class: "dropdown-item" %>
+              <%= link_to "News", news_posts_path, class: "dropdown-item" %>
             </li>
             <li>
               <%= link_to "Events", "#", class: "dropdown-item" %>
@@ -74,7 +74,13 @@
         <% elsif user_signed_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+              <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+              <div class="d-none d-lg-inline">
+                <div class='avatar'>
+                  <div class=''><%= current_user.email[0].upcase%></div>
+                </div>
+              </div>
+              <span class="d-lg-none nav-link"><%= current_user.email %></span>
             </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Action", "#", class: "dropdown-item" %>

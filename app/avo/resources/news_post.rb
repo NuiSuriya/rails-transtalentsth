@@ -6,13 +6,17 @@ class Avo::Resources::NewsPost < Avo::BaseResource
 
   def fields
     field :id, as: :id
-    field :title, as: :text
-    field :content, as: :textarea
-    field :date, as: :date
-    field :min_to_read, as: :number
-    field :vdo_url, as: :text
-    field :user, as: :belongs_to
-    field :is_pinned, as: :boolean
+    field :title, as: :text, only_on: %i[show new edit]
+    field :excerpt, as: :text, only_on: :index, link_to_resource: true
     field :category, as: :belongs_to
+    field :photos, as: :files, are_images: true
+    field :vdo_url, as: :text
+    field :content, as: :trix, attachment_key: :trix_attachments
+
+    field :user, as: :belongs_to
+    field :min_to_read, as: :number, only_on: %i[show new edit]
+    field :date, as: :date
+    field :is_pinned, as: :boolean
+    field :tag, as: :has_many
   end
 end

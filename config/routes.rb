@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :contact_forms, only: [:new, :create]
   resources :blog_posts, only: [:index, :show]
+  resources :news_posts, only: [:index, :show]
 end

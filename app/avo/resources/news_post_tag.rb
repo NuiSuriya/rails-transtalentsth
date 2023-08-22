@@ -6,7 +6,7 @@ class Avo::Resources::NewsPostTag < Avo::BaseResource
 
   def fields
     field :id, as: :id
-  field :tag, as: :belongs_to
-  field :news_post, as: :belongs_to
+    field :tag, as: :belongs_to
+    field :news_post, as: :belongs_to
   end
 end
