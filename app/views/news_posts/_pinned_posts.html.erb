@@ -1,0 +1,49 @@
+<div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <% @news_posts.each_with_index do |post, index| %>
+      <% if post.is_pinned? %>
+        <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+          <div class="container">
+            <div class="card p-3">
+              <div class="row">
+                <div class="col-4">
+                  <% if post.photos.present? %>
+                    <div>
+                      <%= cl_image_tag post.photos.first.key, height: '100%', width: '100%' %>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="col-8">
+                  <div class="">
+                    <h2><%= post.title %></h2>
+                    <p><%= raw(truncate(strip_tags(post.content.html_safe),
+                      length: 150, omission: ' (Read more)')) %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- Carousel indicators -->
+  <div class="carousel-indicators">
+    <% @news_posts.each_with_index do |post, index| %>
+      <% if post.is_pinned? %>
+        <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %> rounded-circle"></button>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- Carousel controls -->
+  <a class="carousel-control-prev" href="#newsCarousel" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#newsCarousel" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>

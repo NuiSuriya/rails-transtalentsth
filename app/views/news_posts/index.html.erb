@@ -1,2 +1,13 @@
-<h1>NewsPosts#index</h1>
-<p>Find me in app/views/news_posts/index.html.erb</p>
+<%# BANNER %>
+<div id="new-post-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white">News</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# PINNED  3 POSTS %>
+<%= render 'pinned_posts' %>
