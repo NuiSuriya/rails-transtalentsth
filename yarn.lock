@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+"swiper@^10.2.0":
+  "integrity" "sha512-nktQsOtBInJjr3f5DicxC8eHYGcLXDVIGPSon0QoXRaO6NjKnATCbQ8SZsD3dN1Ph1RH4EhVPwSYCcuDRFWHGQ=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-10.2.0.tgz"
+  "version" "10.2.0"

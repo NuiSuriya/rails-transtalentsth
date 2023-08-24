@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'promote/:id', to: 'admin#promote_to_admin', as: :promote_to_admin
-    get 'ad_admin', to: 'admin#add_admin'
+    get 'add_admin', to: 'admin#add_admin'
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

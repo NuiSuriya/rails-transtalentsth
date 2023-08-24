@@ -1,0 +1,35 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.mySwiper {
+  .card {
+    background: #F2F2F2;
+    border: none;
+  }
+}
+
+.square-container {
+  width: 100%;
+  padding-top: 100%; /* 1:1 aspect ratio (square) */
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+// swiper-slide {
+//   text-align: center;
+//   font-size: 18px;
+//   background: #fff;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// swiper-slide img {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }

@@ -12,5 +12,4 @@ class NewsPostsController < ApplicationController
   def set_news_post
     @news_post = NewsPost.find(params[:id])
   end
-
 end
