@@ -1,7 +1,7 @@
 class NewsPostsController < ApplicationController
   before_action :set_news_post, only: :show
   def index
-    @news_posts = NewsPost.all
+    @news_posts = NewsPost.order(date: :desc)
   end
 
   def show
