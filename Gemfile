@@ -82,3 +82,4 @@ gem "avo", ">= 3.0.1.beta7", source: "https://packager.dev/avo-hq/"
 gem "activestorage"
 gem "image_processing"
 gem "devise"
+gem 'kaminari'

@@ -1,7 +1,7 @@
 <div class="container">
-  <swiper-container class="mySwiper my-3" space-between="30" pagination="true" pagination-clickable="true"
+  <swiper-container class="pinned-swiper my-3" space-between="30" pagination="true" pagination-clickable="true"
     centered-slides="true" autoplay-delay="6000" autoplay-disable-on-interaction="false">
-    <% @news_posts.each do |post| %>
+    <% @pinned_news_posts.each do |post| %>
       <% if post.is_pinned? %>
 
         <swiper-slide>
@@ -11,9 +11,11 @@
               <div class="card p-3" style="">
                 <div class="row p-3">
                   <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+
                     <div class="card-img-container square-container"
                           style="background-image: url('<%= cl_image_path post.photos.first.key%>');">
                     </div>
+
                   </div>
 
                   <div class="col-12 col-md-8 d-flex mt-lg-0 mt-md-0 mt-sm-3 align-items-center justify-content-center">

@@ -1,7 +1,8 @@
 class NewsPostsController < ApplicationController
   before_action :set_news_post, only: :show
   def index
-    @news_posts = NewsPost.order(date: :desc)
+    @pinned_news_posts = NewsPost.order(date: :desc)
+    @news_posts = NewsPost.order(date: :desc).page(params[:page]).per(6)
   end
 
   def show
