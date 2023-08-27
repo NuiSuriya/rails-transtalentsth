@@ -1,35 +1,77 @@
-<h1>NewsPosts#show</h1>
-<p>Find me in app/views/news_posts/show.html.erb</p>
+<div class="news-posts-container">
+    <%# HEADING %>
+    <h1 class="news-posts-heading mb-3">
+      <%= @news_post.title %>
+    </h1>
 
-
-<div class="container d-flex p-5 flex-column border border-2 rounded">
-  <div class="row pb-3 align-content-center">
-    <h1>'CATEGORY' offered by 'USERFIRST NAME' "LASTNAME".</h1>
-  </div>
-
-  <div class="row justify-content-between align-content-center">
-    <div class="col-3">
-      'IMAGE'
+    <%# DETAILS %>
+    <div class='news-post-details d-flex flex-wrap justify-content-between align-items-center'>
+      <div class='mb-1'>
+      <span class='me-3'>
+        <%= @news_post.date.strftime('%B %d, %Y') %>
+      </span>
+      <span class='align-self-center'><i class="fa-solid fa-circle dot me-3"></i></span>
+      <span><%= @news_post.min_to_read %> mins read</span>
+      </div>
+      <div class="ms-3 mb-1">
+        <%= @news_post.category.name %>
+      </div>
     </div>
 
-    <div class="col-6 pe-10 me-10">
 
-        <h2 class='mb-3'>"MODEL", 'BRAND'</h2>
-
-
-      <div class="d-flex">
-          <div class="me-3 bg-primary text-white align-self-center">Located in</div>
-          <div class='bg-primary text-white' style="font-size: 2rem;"> "CITY" </div>
+    <%# FIRST PHOTO %>
+    <div class>
+      <div class="responsive-padding">
+        <div class="square-container" style="background-image: url('<%= cl_image_path @news_post.photos.first.key %>');">
+        </div>
       </div>
-
-      <div class="d-flex align-items-center">
-        <p>for </p><h3>"78" € </h3><p>  per day.</p>
-      </div>
-
-      <p>Description: 'description' </p>
-
     </div>
 
-  </div>
+    <%# CONTENT %>
+    <div class="news-post-content mt-5">
+      <%= @news_post.content.html_safe %>
+    </div>
 
+    <%# TAGS %>
+    <div class="my-5 tags-container">
+      <% @tags.each do |tag| %>
+        <span class="badge mb-2"><%= tag.name %></span>
+      <% end %>
+      <div class="tag-names mt-3"></div>
+    </div>
+
+    <%# VDO %>
+    <h1 class='text-blue text-center mb-5' style='font-weight: 700'>Gallery & Video </h1>
+    <% if @news_post.vdo_url.present? %>
+      <% if @video_id.present? %>
+        <div class='text-center vdo'>
+          <iframe width="720" height="450"
+            src="https://www.youtube.com/embed/<%= @video_id %>"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          </iframe>
+        </div>
+      <% else %>
+        <p>Invalid video URL</p>
+      <% end %>
+    <% end %>
+
+
+
+    <%# PHOTOS %>
+    <swiper-container class="mt-5" slides-per-view="3" space-between="20"
+      centered-slides="true" navigation="true" autoplay-delay="2000"
+      autoplay-disable-on-interaction="false" loop="true">
+      <% @news_post.photos.each do |photo| %>
+        <swiper-slide>
+            <%# <div class="responsive-padding"> %>
+              <div class="photos" style="background-image: url('<%= cl_image_path photo.key %>');">
+              </div>
+            <%# </div> %>
+        </swiper-slide>
+      <% end %>
+    </swiper-container>
+
+    <%# CONTACT FORM %>
 </div>
+<%= render 'contact_forms/form', contact_form: @contact_form %>

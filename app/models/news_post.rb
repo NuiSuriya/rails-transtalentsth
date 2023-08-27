@@ -2,7 +2,9 @@ class NewsPost < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  has_many :tags, through: :news_post_tag
+  has_many :news_post_tags # This should be the join table name
+  has_many :tags, through: :news_post_tags # This references the tags associated with this news post
+
   has_many_attached :photos
   has_many_attached :trix_attachments
 

@@ -1,0 +1,37 @@
+.news-posts-container{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.square-container-post {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.responsive-padding {
+  padding: 5% 10%; /* Default padding for small screens */
+
+  /* Media query for medium-sized screens */
+  @media screen and (min-width: 768px) {
+    padding: 4% 15%;
+  }
+
+  /* Media query for large screens */
+  @media screen and (min-width: 1024px) {
+    padding: 4% 10%;
+  }
+}
+
+.vdo {
+  border-radius: 10px;
+}
+
+.photos {
+  width: 100%;
+  padding-top: 60%; /* 1:1 aspect ratio (square) */
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
