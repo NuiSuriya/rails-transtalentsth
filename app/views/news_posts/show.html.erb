@@ -41,37 +41,19 @@
     </div>
 
     <%# VDO %>
-    <h1 class='text-blue text-center mb-5' style='font-weight: 700'>Gallery & Video </h1>
-    <% if @news_post.vdo_url.present? %>
-      <% if @video_id.present? %>
-        <div class='text-center vdo'>
-          <iframe width="720" height="450"
-            src="https://www.youtube.com/embed/<%= @video_id %>"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-          </iframe>
-        </div>
-      <% else %>
-        <p>Invalid video URL</p>
-      <% end %>
-    <% end %>
-
-
+    <h1 class='text-blue text-center mb-5' style='font-weight: 700'>
+      Gallery & Video
+    </h1>
+    <%= render 'vdo' %>
 
     <%# PHOTOS %>
-    <swiper-container class="mt-5" slides-per-view="3" space-between="20"
-      centered-slides="true" navigation="true" autoplay-delay="2000"
-      autoplay-disable-on-interaction="false" loop="true">
-      <% @news_post.photos.each do |photo| %>
-        <swiper-slide>
-            <%# <div class="responsive-padding"> %>
-              <div class="photos" style="background-image: url('<%= cl_image_path photo.key %>');">
-              </div>
-            <%# </div> %>
-        </swiper-slide>
-      <% end %>
-    </swiper-container>
+    <%= render 'photos' %>
 
-    <%# CONTACT FORM %>
+    <%# RECOMMENED POST %>
+    <h1 class='text-blue text-center' style='font-weight: 700; margin-top: 60px;'>
+      You may also like
+    </h1>
+    <%= render 'recomments' %>
 </div>
+<%# CONTACT FORM %>
 <%= render 'contact_forms/form', contact_form: @contact_form %>

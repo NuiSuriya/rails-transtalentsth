@@ -1,0 +1,12 @@
+<swiper-container class="mt-5 mb-3" slides-per-view="3" space-between="20"
+  centered-slides="true" navigation="true" autoplay-delay="2000"
+  autoplay-disable-on-interaction="false" loop="true">
+  <% @news_post.photos.each do |photo| %>
+    <swiper-slide>
+        <%# <div class="responsive-padding"> %>
+          <div class="photos" style="background-image: url('<%= cl_image_path photo.key %>');">
+          </div>
+        <%# </div> %>
+    </swiper-slide>
+  <% end %>
+</swiper-container>
