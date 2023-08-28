@@ -1,5 +1,13 @@
 <% if @news_post.vdo_url.present? %>
   <div class="container text-center">
-    <%= @news_post.vdo_url.html_safe %>
+    <% if @news_post.vdo_url.include?('facebook.com') %>
+      <div class="ratio ratio-1x1">
+        <%= @news_post.vdo_url.html_safe %>
+      </div>
+    <% else %>
+      <div class="ratio ratio-16x9">
+        <%= @news_post.vdo_url.html_safe %>
+      </div>
+    <% end %>
   </div>
 <% end %>

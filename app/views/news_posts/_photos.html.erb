@@ -1,17 +1,23 @@
-<swiper-container class="mt-5 mb-3" slides-per-view="3" space-between="20"
-  centered-slides="true" navigation="true" autoplay-delay="2000"
-  autoplay-disable-on-interaction="false" loop="true">
-  <% @news_post.photos.each do |photo| %>
-    <swiper-slide>
-        <%# <div class="responsive-padding"> %>
-          <div class="photos" style="background-image: url('<%= cl_image_path photo.key %>');">
-          </div>
-        <%# </div> %>
-    </swiper-slide>
-  <% end %>
-</swiper-container>
+<div data-controller="image-modal">
 
-<div id="imageModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="fullImage">
+  <swiper-container class="mt-5 mb-3" slides-per-view="3" space-between="20"
+    centered-slides="true" navigation="true" autoplay-delay="2000"
+    autoplay-disable-on-interaction="false" loop="true">
+
+    <% @news_post.photos.each do |photo| %>
+      <swiper-slide>
+        <div class="photos" style="background-image: url('<%= cl_image_path photo.key %>');"
+          data-action="click->image-modal#openModal">
+        </div>
+      </swiper-slide>
+    <% end %>
+
+  </swiper-container>
+
+  <div id="imageModal" class="modal" data-image-modal-target="modal">
+
+    <span class="close" data-action="click->image-modal#closeModal">&times;</span>
+    <img class="modal-content" id="fullImage" data-image-modal-target="fullImage">
+
+  </div>
 </div>
