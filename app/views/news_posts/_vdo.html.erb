@@ -1,13 +1,5 @@
 <% if @news_post.vdo_url.present? %>
-  <% if @video_id.present? %>
-    <div class='text-center'>
-      <iframe width="720" height="405"
-        src="https://www.youtube.com/embed/<%= @video_id %>"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-      </iframe>
-    </div>
-  <% else %>
-    <p>Invalid video URL</p>
-  <% end %>
+  <div class="container text-center">
+    <%= @news_post.vdo_url.html_safe %>
+  </div>
 <% end %>

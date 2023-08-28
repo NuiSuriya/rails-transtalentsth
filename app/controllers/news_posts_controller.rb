@@ -9,7 +9,10 @@ class NewsPostsController < ApplicationController
     @tags = @news_post.tags
     @contact_form = ContactForm.new
 
-    @video_id = extract_video_id(@news_post.vdo_url) if @news_post.vdo_url.present?
+    # # Find platform of the VDO
+    # @video_platform = platform_from_url(@news_post.vdo_url) if @news_post.vdo_url.present?
+    # @video_id = extract_video_id(@news_post.vdo_url) if @news_post.vdo_url.present?
+
 
     # Find related posts based on shared tags
     related_post_ids = NewsPost.joins(:tags) # join the news_posts table with the tags table through the news_post_tags join table
@@ -23,20 +26,56 @@ class NewsPostsController < ApplicationController
 
   private
 
-  def extract_video_id(url)
-    # Extract the 'v' parameter from the query string
-    uri = URI(url)
-    query = URI.decode_www_form(uri.query || "")
-    video_id = query.to_h["v"]
+  # def extract_video_id(url)
+  #   # Extract the 'v' parameter from the query string
+  #   uri = URI(url)
+  #   query = URI.decode_www_form(uri.query || "")
+  #   video_id = query.to_h["v"]
 
-    # If the 'v' parameter is not present in the query string, try to extract it from the path
-    if video_id.blank?
-      path_segments = uri.path.split("/")
-      video_id = path_segments.last if path_segments.include?("watch") && path_segments.length >= 2
-    end
+  #   # If the 'v' parameter is not present in the query string, try to extract it from the path
+  #   if video_id.blank?
+  #     path_segments = uri.path.split("/")
+  #     video_id = path_segments.last if path_segments.include?("watch") && path_segments.length >= 2
+  #   end
 
-    video_id
+  #   video_id
+  # end
+  def platform_from_url(vdo_url)
+    return 'youtube' if vdo_url =~ /youtube\.com/
+    return 'facebook' if vdo_url =~ /facebook\.com/
+    return 'linkedin' if vdo_url =~ /linkedin\.com/
   end
+
+  def extract_video_id(url)
+    case platform_from_url(url)
+    when 'youtube'
+      # Extract the 'v' parameter from the query string
+      uri = URI(url)
+      query = URI.decode_www_form(uri.query || "")
+      video_id = query.to_h["v"]
+
+      # If the 'v' parameter is not present in the query string, try to extract it from the path
+      if video_id.blank?
+        path_segments = uri.path.split("/")
+        video_id = path_segments.last if path_segments.include?("watch") && path_segments.length >= 2
+      end
+
+      video_id
+    when 'facebook'
+      # Extract the video ID from the URL using a regular expression
+      url.match(/\/videos\/(\d+)/)&.captures&.first
+    when 'linkedin'
+    # Use regex to extract the desired string
+      match = url.match(/-(\d+)-/)
+
+      # Check if a match was found
+      video_id = match[1] if match # Extracted string is in the first capture group
+      video_id
+    else
+      nil
+    end
+  end
+
 
   def set_news_post
     @news_post = NewsPost.find(params[:id])
