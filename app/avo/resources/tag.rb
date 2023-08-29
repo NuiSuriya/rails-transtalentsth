@@ -8,7 +8,9 @@ module Avo
 
       def fields
         field :id, as: :id
-        field :name, as: :text
+        field :name, as: :text, sortable: true, link_to_resource: true
+
+
         field :news_post_tag, as: :has_many
         field :news_post, as: :has_many
       end

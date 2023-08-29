@@ -8,7 +8,7 @@ module Avo
 
       def fields
         field :id, as: :id
-        field :name, as: :text
+        field :name, as: :text, link_to_resource: true, sortable: true
         field :blog_posts, as: :has_many, attach_scope: lambda {
                                                           query.where.not(category_id:
           parent.id).or(query.where(category_id: nil))
