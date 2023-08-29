@@ -12,7 +12,7 @@ module Avo
         field :excerpt, as: :text, only_on: :index, link_to_resource: true
         field :category, as: :belongs_to
         field :photos, as: :files, are_images: true
-        field :vdo_url, as: :text, name: 'Embed VDO Link', placeholder: 'LinkedIn, Facebook, YouTube(720 * 415) etc.'
+        field :vdo_url, as: :text, name: 'Embed VDO Link', placeholder: 'LinkedIn, Facebook, YouTube etc.'
         field :content, as: :trix, attachment_key: :trix_attachments
 
         field :user, as: :belongs_to
