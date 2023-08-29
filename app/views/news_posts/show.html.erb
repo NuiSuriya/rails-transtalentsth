@@ -20,15 +20,15 @@
 
 
     <%# FIRST PHOTO %>
-    <div class>
-      <div class="responsive-padding">
-        <div class="square-container" style="background-image: url('<%= cl_image_path @news_post.photos.first.key %>');">
+    <div class='my-5'>
+      <div class="px-5">
+        <div class="fist-photo-container" style="background-image: url('<%= cl_image_path @news_post.photos.first.key %>');">
         </div>
       </div>
     </div>
 
     <%# CONTENT %>
-    <div class="news-post-content mt-5">
+    <div class="news-post-content mt-4">
       <%= @news_post.content.html_safe %>
     </div>
 

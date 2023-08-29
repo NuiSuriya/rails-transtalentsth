@@ -36,3 +36,18 @@
   color: $blue;
 }
 
+.square-container {
+  width: 100%;
+  padding-top: 100%; /* 1:1 aspect ratio (square) */
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.fist-photo-container {
+  width: 100%;
+  padding-top: 60%; /* 1:1 aspect ratio (square) */
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+}
