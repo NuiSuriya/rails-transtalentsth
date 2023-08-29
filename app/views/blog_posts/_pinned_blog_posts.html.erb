@@ -1,9 +1,9 @@
 <div class="container">
   <swiper-container class="pinned-swiper my-3" space-between="30" pagination="true" pagination-clickable="true"
     centered-slides="true" loop='true' autoplay-delay="6000" autoplay-disable-on-interaction="false">
-    <% @pinned_news_posts.each do |post| %>
+    <% @pinned_blog_posts.each do |post| %>
       <swiper-slide>
-        <%= link_to news_post_path(post), class: 'text-decoration-none' do %>
+        <%= link_to blog_post_path(post), class: 'text-decoration-none' do %>
           <div class='px-3 py-5'>
             <%# <div class="card p-3 mx-auto" style="max-width: 800px;"> %>
             <div class="card p-3" style="">

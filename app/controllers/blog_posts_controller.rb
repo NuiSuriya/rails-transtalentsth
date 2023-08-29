@@ -1,7 +1,8 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: :show
   def index
-    @blog_posts = BlogPost.all
+    @pinned_blog_posts = BlogPost.where(is_pinned: true)
+    @blog_posts = BlogPost.order(date: :desc).page(params[:page]).per(6)
   end
 
   def show
@@ -11,9 +12,5 @@ class BlogPostsController < ApplicationController
 
   def set_blog_post
     @blog_post = BlogPost.find(params[:id])
-  end
-
-  def blog_post_params
-    params.require(:blog_post).permit(:title, :content, :writer, :min_to_read, :date, :category_id, photos: [])
   end
 end

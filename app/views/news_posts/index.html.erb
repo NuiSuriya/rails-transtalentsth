@@ -1,18 +1,10 @@
-<div class='bg-white'>
-  <%# BANNER %>
-  <div id="new-post-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h1 class="text-white">News</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <%# PINNED  3 POSTS %>
-  <%= render 'pinned_posts' %>
-
-  <%# LATEST NEWS %>
-  <%= render 'post_cards' %>
+<%# BANNER %>
+<div id="post-banner">
+  <h1 class="text-white">News</h1>
 </div>
+
+<%# PINNED  3 POSTS %>
+<%= render 'pinned_posts' %>
+
+<%# LATEST NEWS %>
+<%= render 'post_cards' %>

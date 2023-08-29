@@ -1,3 +1,10 @@
-<% @blog_posts.each do|post| %>
-  <%= link_to post.title.truncate(50), blog_post_path(post) %>
-<% end %>
+<%# BANNER %>
+<div id="post-banner">
+  <h1>Blogs</h1>
+</div>
+
+<%# PINNED  3 POSTS %>
+<%= render 'pinned_blog_posts' %>
+
+<%# LATEST BLOGS %>
+<%= render 'blog_post_cards' %>
