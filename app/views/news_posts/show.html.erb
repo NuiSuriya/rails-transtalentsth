@@ -1,11 +1,11 @@
-<div class="news-posts-container">
+<div class="posts-container">
     <%# HEADING %>
-    <h1 class="news-posts-heading mb-3">
+    <h1 class="posts-heading mb-3">
       <%= @news_post.title %>
     </h1>
 
     <%# DETAILS %>
-    <div class='news-post-details d-flex flex-wrap justify-content-between align-items-center'>
+    <div class='post-details d-flex flex-wrap justify-content-between align-items-center'>
       <div class='mb-1'>
       <span class='me-3'>
         <%= @news_post.date.strftime('%B %d, %Y') %>
@@ -21,14 +21,14 @@
 
     <%# FIRST PHOTO %>
     <div class='my-5'>
-      <div class="px-5">
+      <div class="px-lg-5 px-md-5 px-sm-3">
         <div class="fist-photo-container" style="background-image: url('<%= cl_image_path @news_post.photos.first.key %>');">
         </div>
       </div>
     </div>
 
     <%# CONTENT %>
-    <div class="news-post-content mt-4">
+    <div class="post-content mt-4">
       <%= @news_post.content.html_safe %>
     </div>
 

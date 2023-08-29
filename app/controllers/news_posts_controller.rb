@@ -9,11 +9,6 @@ class NewsPostsController < ApplicationController
     @tags = @news_post.tags
     @contact_form = ContactForm.new
 
-    # # Find platform of the VDO
-    # @video_platform = platform_from_url(@news_post.vdo_url) if @news_post.vdo_url.present?
-    # @video_id = extract_video_id(@news_post.vdo_url) if @news_post.vdo_url.present?
-
-
     # Find related posts based on shared tags
     related_post_ids = NewsPost.joins(:tags) # join the news_posts table with the tags table through the news_post_tags join table
                                .where(tags: { id: @tags.pluck(:id) }) # the id values extracted from the @tags collection using @tags.pluck(:id).

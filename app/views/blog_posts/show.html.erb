@@ -1,12 +1,59 @@
-<div class="container my-3">
-  <p><%= @blog_post.user.email %></p>
-  <p><%= @blog_post.date.strftime('%d %b')%></p>
-  <p><%= @blog_post.min_to_read %></p>
-  <h1 id="blog-title"><%= @blog_post.title %></h1>
-  <%#= sanitize @blog_post.content %>
-  <%#= sanitize @blog_post.content, tags: %w(p strong em), attributes: %w(style) %>
+<div class="posts-container">
+    <%# HEADING %>
+    <h1 class="posts-heading mb-3">
+      <%= @blog_post.title %>
+    </h1>
 
-  <div class="blog-content mt-5">
-    <%= @blog_post.content.html_safe %>
-  </div>
+    <%# DETAILS %>
+    <div class='post-details d-flex flex-wrap justify-content-between align-items-center'>
+      <div class='mb-1'>
+      <span class='me-3'>
+        <%= @blog_post.date.strftime('%B %d, %Y') %>
+      </span>
+      <span class='align-self-center'><i class="fa-solid fa-circle dot me-3"></i></span>
+      <span><%= @blog_post.min_to_read %> mins read</span>
+      </div>
+      <div class="ms-3 mb-1">
+        <%= @blog_post.category.name %>
+      </div>
+    </div>
+
+
+    <%# FIRST PHOTO %>
+    <div class='my-5'>
+      <div class="px-lg-5 px-md-5 px-sm-3">
+        <div class="fist-photo-container" style="background-image: url('<%= cl_image_path @blog_post.photos.first.key %>');">
+        </div>
+      </div>
+    </div>
+
+    <%# CONTENT %>
+    <div class="post-content mt-4">
+      <%= @blog_post.content.html_safe %>
+    </div>
+
+    <%# TAGS %>
+    <div class="my-5 tags-container">
+      <% @tags.each do |tag| %>
+        <span class="badge mb-2"><%= tag.name %></span>
+      <% end %>
+      <div class="tag-names mt-3"></div>
+    </div>
+
+    <%# VDO %>
+    <h1 class='text-blue text-center mb-5' style='font-weight: 700'>
+      Gallery & Video
+    </h1>
+    <%= render 'vdo' %>
+
+    <%# PHOTOS %>
+    <%= render 'photos' %>
+
+    <%# RECOMMENED POST %>
+    <h1 class='text-blue text-center' style='font-weight: 700; margin-top: 60px;'>
+      You may also like
+    </h1>
+    <%= render 'recomments' %>
 </div>
+<%# CONTACT FORM %>
+<%= render 'contact_forms/form', contact_form: @contact_form %>

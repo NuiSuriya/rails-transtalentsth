@@ -2,16 +2,6 @@
   color: $purple ;
 }
 
-#blog-title {
-  font-family: 'Poppins';
-  font-weight: 700;
-}
-
-.blog-content {
-  a {
-    text-decoration: none;
-  }
-}
 
 .text-blue {
   color: $blue;
@@ -34,14 +24,14 @@
   }
 }
 
-.news-posts-heading {
+.posts-heading {
   color: $blue;
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
-.news-post-content {
-  font-size: 1.2rem;
+.post-content {
+  font-size: 1rem;
   font-weight: 400;
   a {
     text-decoration: none;
@@ -54,9 +44,10 @@
   }
 }
 
-.news-post-details{
+.post-details{
   color: #636363;
   border-bottom: 0.5px solid #636363;
+  font-size: 0.8rem;
 }
 
 .dot {
