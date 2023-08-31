@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   authenticate :user, -> user { user.admin? } do
     mount Avo::Engine, at: Avo.configuration.root_path
   end
-  devise_for :users
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+
   devise_for :admins
 
   root to: "pages#home"
