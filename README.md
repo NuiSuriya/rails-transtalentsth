@@ -1,10 +1,6 @@
 <h1 align="center">Hi 👋, I'm Nui Suriya</h1>
 <h3 align="center">A junior Full-Stack Developer from Thailand and based in the Netherlands</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=nuisuriya&label=Profile%20views&color=0e75b6&style=flat" alt="nuisuriya" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=nuisuriya" alt="nuisuriya" /></a> </p>
-
 - 🔭 I’m currently working on [rails-transtalentsth](https://github.com/NuiSuriya/rails-transtalentsth)
 
 - 🌱 I’m currently learning **Ruby, JavaScripts, Vue, React**
