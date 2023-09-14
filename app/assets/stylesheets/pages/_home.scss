@@ -33,7 +33,7 @@
   }
 }
 
-#brands {
+.gray-bg {
   background: #F2F2F2;
 }
 
@@ -48,9 +48,11 @@
   h1 {
     font-weight: 700;
     margin-bottom: 0;
+    color: white
   }
   p {
     font-weight: 400;
+    color: white
   }
 }
 
@@ -68,7 +70,7 @@
 #service {
   background: white;
     h1{
-      color: $purple;
+      color: $blue;
       font-weight: 700;
       font-style: normal;
     }
@@ -92,4 +94,17 @@
   h1 {
     font-weight: 700;
   }
+}
+
+.why-container{
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  color: white;
 }
