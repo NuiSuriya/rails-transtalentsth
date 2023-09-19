@@ -108,3 +108,17 @@
   border-radius: 20px;
   color: white;
 }
+
+#ready-banner{
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  h1{
+    color: white !important;
+    font-size: 3rem;
+  }
+  p{
+    font-size: 1.5rem;
+  }
+}

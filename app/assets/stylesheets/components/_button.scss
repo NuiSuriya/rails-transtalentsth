@@ -32,6 +32,24 @@
   }
 }
 
+#btn-get-in-touch-white {
+  background: white;
+  border-radius: 100px;
+  color: #FF66C4;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  font-size: 14px;
+
+  &:hover {
+    // box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, $blue 0 -3px 0 inset;
+    transform: translateY(-2px);
+    font-weight: 600;
+  }
+}
+
 .btn-blue {
   background: $blue;
   border-radius: 100px;
