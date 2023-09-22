@@ -10,7 +10,7 @@
               <div class='pe-3'>
                 <%# <div class="card p-3 mx-auto" style="max-width: 800px;"> %>
                 <div class="card" style="">
-                  <div class="row p-3">
+                  <div class="row p-0 p-md-3">
                     <div class="col-12 col-md-4 d-flex align-items-center">
                       <%# PHOTO %>
                       <div class="card-img-container square-container"
@@ -61,11 +61,11 @@
             <%= date.day %>
           <% end %>
         <% end %>
-        
+
         <% @events = @events.sort_by(&:start_time) %>
         <%# @events = @events.sort_by {|event| event.start_time} %>
 
-        <div id="event-list-card" class='mt-5 py-3 mb-3 mb-md-0'>
+        <div id="event-list-card" class='mt-5 py-3 mb-3 mb-md-0 <%= 'd-none' if @events.size == 0  %>'>
           <% @events.each do |event| %>
             <div class="card py-3 <%= 'last-card' if event == @events.last %>">
               <div class="row">
