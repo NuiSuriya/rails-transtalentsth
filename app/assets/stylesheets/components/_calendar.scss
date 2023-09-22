@@ -1,0 +1,83 @@
+.simple-calendar{
+
+  .table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-bg-type: white;
+  }
+
+  .table {
+    border: none;
+  }
+
+  th{
+    border: none;
+  }
+
+  td{
+    border: none;
+    background: white;
+  }
+
+  .day {
+    height: 5px;
+  }
+
+  .prev-month{
+    color: #BDBDBD;
+  }
+
+  .next-month{
+    color: #BDBDBD;
+  }
+
+  .today {
+    color: white;
+    font-weight: 700;
+    background: $pink;
+    width: 32px;
+    height: 32px;
+    margin-top: 3px;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border: 2.5px solid $blue; /* Change border color and size as desired */
+    border-radius: 50%; /* Makes it a circle */
+    display: inline-block
+  }
+
+  .has-events {
+    width: 32px;
+    height: 32px;
+    margin-top: 3px;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border: 2.5px solid $blue; /* Change border color and size as desired */
+    border-radius: 50%; /* Makes it a circle */
+    display: inline-block
+  }
+}
+
+#event-list-card{
+  background: $light-blue;
+  border-radius: 20px;
+  font-weight: 400;
+  .card {
+    background: none;
+    border: none;
+    border-bottom: 1px solid $blue;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .last-card {
+    border-bottom: none;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 1.9rem;
+  }
+
+  .col-3 {
+    margin-right: -15px;
+  }
+}

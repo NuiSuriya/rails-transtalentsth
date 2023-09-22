@@ -1,0 +1,90 @@
+<div>
+  <div class="container">
+    <div class="row mt-5">
+      <%# LATEST BLOGS %>
+      <div id="latest-blogs" class='col-md-8'>
+        <h1 class="text-md-start text-center">Latest blogs</h1>
+        <div class='mt-4'>
+          <% @blog_posts.each do |post| %>
+            <%= link_to blog_post_path(post), class: 'text-decoration-none' do %>
+              <div class='pe-3'>
+                <%# <div class="card p-3 mx-auto" style="max-width: 800px;"> %>
+                <div class="card" style="">
+                  <div class="row p-3">
+                    <div class="col-12 col-md-4 d-flex align-items-center">
+                      <%# PHOTO %>
+                      <div class="card-img-container square-container"
+                            style="background-image: url('<%= cl_image_path post.photos.first.key%>');">
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-8 mt-lg-0 mt-md-0 mt-sm-3 d-flex align-items-center">
+                      <div class="card-body">
+                        <%# DATE && CATEGORY %>
+                        <div class="d-flex justify-content-between mb-3" style='font-size: 0.8rem'>
+                          <div>
+                            <p class='text-secondary'><%= post.date.strftime('%d %b %Y').upcase %> - <%= post.min_to_read %> mins to read</p>
+                          </div>
+                          <div>
+                            <span id='category-bg-gray' class='px-4 py-2'><%= post.category.name %></span>
+                          </div>
+                        </div>
+
+                        <%# TITLE and CONTENT %>
+                        <h3 class="card-title" style='font-weight: 700; font-size: 1.7em;'>
+                          <%= post.title %>
+                        </h3>
+                        <p class="card-text mt-3" style='font-weight: 400; font-size:1em;'>
+                          <%= raw(truncate(strip_tags(post.content.html_safe),
+                          length: 150, omission: '...'))%>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class='my-5 text-center'>
+          <%= link_to "See more", blog_posts_path , class: 'text-white py-2 btn-blue'%>
+        </div>
+      </div>
+
+      <%# EVENTS CALENDAR %>
+      <div id="events" class="col-md-4">
+        <h1 class="text-md-start text-center">Events</h1>
+
+        <%= turbo_frame_tag 'calendar' do %>
+          <div class="text-center"><%= month_calendar(events: @events) do |date| %></div>
+            <%= date.day %>
+          <% end %>
+        <% end %>
+        
+        <% @events = @events.sort_by(&:start_time) %>
+        <%# @events = @events.sort_by {|event| event.start_time} %>
+
+        <div id="event-list-card" class='mt-5 py-3 mb-3 mb-md-0'>
+          <% @events.each do |event| %>
+            <div class="card py-3 <%= 'last-card' if event == @events.last %>">
+              <div class="row">
+                <div class="col-3">
+                  <h2><%= event.start_time.day %></h2>
+                </div>
+                <div class="col-9 text-start">
+                  <div style='font-size: 1rem'>
+                    <%= event.name %>
+                  </div>
+                  <div class='mt-2' style='font-size: 0.7rem'>
+                    <%= event.start_time.strftime('%B %Y') %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

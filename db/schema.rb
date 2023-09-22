@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_12_092708) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_21_180844) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,6 +93,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_092708) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["message_category_id"], name: "index_contact_forms_on_message_category_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "message_categories", force: :cascade do |t|
