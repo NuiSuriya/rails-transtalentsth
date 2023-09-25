@@ -1,0 +1,106 @@
+<%# BANNER %>
+<div style='margin-top: 100px'>
+  <div id="about-us-banner" class='mt-5 mt-lg-2'>
+    <h1>About Us</h1>
+  </div>
+</div>
+
+<%# ABOUTUS_TITLE %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6">
+      <div id="about-us-title-img-container" class="bg-image" style="background-image: url('<%= image_path 'about-us-title-img.jpg' %>')">
+      </div>
+    </div>
+
+    <div class="col-lg-6 d-flex align-items-center mt-3 mt-lg-0">
+      <div class='about-us-title ms-0 ms-lg-5'>
+        <div class="container ms-0 ms-lg-5">
+          <h1 class='text-blue text-center text-lg-start'>
+            We are here to help both job seekers and corporations grow and succeed!
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# DESCRIPTIONS %>
+<div id="about-us-descriptions" class="container">
+  <div class="row mt-3 mt-lg-5">
+    <div class="col-md-6">
+      <!-- DESCRIPTIONS 1 -->
+      <div class="card p-4 p-lg-5 h-100"> <!-- Added h-100 class for fixed height -->
+        <p class='card-text'>
+          TransTalents DE&I Consulting Academy helps businesses to assess,
+          strategize, manage, and communicate to reach their DE&I goals with
+          measurable KPIs on Purpose, Profit, and People.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 mt-4 mt-md-0">
+      <!-- DESCRIPTIONS 2 -->
+      <div class="card p-4 p-lg-5 h-100"> <!-- Added h-100 class for fixed height -->
+        <p class='card-text'>
+          TransTalents DE&I Consulting Academy is founded by a trans business
+          leader who aims to transform the current workplace into one that
+          focuses on inclusivity and gender equality which can be measured
+          by numbers and impact.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <!-- DESCRIPTIONS 3 -->
+      <div class="card p-4 p-lg-5 h-100"> <!-- Added h-100 class for fixed height -->
+        <p class='card-text'>
+          We are your business partner who will help incorporate a strong
+          DE&I strategy internally and externally. We use a no-nonsense approach
+          to unlock your potential and reach your DE&I goals to become the employer of choice.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 mt-4 mt-md-0">
+      <!-- DESCRIPTIONS 4 -->
+      <div class="card p-4 p-lg-5 h-100"> <!-- Added h-100 class for fixed height -->
+        <p class='card-text'>
+          Additionally, we help businesses create professional ecosystems
+          connecting transgender and LGBQ+ talents with career opportunities
+          across Thailand. We support people to build their growth mindset and skills,
+          connections, teams, and careers.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# APPROACH %>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class='mb-5'>
+        <h1 class='mb-4 text-center text-lg-start'>Our Approach</h1>
+        <p>DE&I is a long-term business driver.It’s the right thing to do, not just nice to have.</p>
+        <p>TransTalents DE&I Consulting Academy helps businesses to assess, strategize, manage,
+          and communicate to reach their DE&I goals with measurable KPIs of Purpose, Profit,
+          and People.</p>
+        <p>We work with businesses that strive towards the same vision, seek long-term partnerships, and sustain impactful
+          change for the better lives of their stakeholders.</p>
+      </div>
+      <div class='text-center text-lg-start'>
+        <%= render 'shared/get_in_touch_btn', class: 'mb-lg-0 mb-5' %>
+      </div>
+    </div>
+    <div class="col-lg-6 mt-5 mt-lg-0">
+      <div id="about-us-title-img-container" class="bg-image" style="background-image: url('<%= image_path 'approach.jpg' %>')">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%# CONTACT FORM %>
+<%= render 'contact_forms/form', contact_form: @contact_form %>

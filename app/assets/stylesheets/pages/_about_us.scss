@@ -1,0 +1,25 @@
+#about-us-title-img-container{
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding-top: 60%;
+  border-radius: 20px;
+}
+
+.about-us-title{
+  // max-width: 420px;
+  h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: normal;
+  }
+}
+
+#about-us-descriptions{
+  .card{
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    // height: auto;
+  }
+}

@@ -9,4 +9,8 @@ class PagesController < ApplicationController
     @contact_form = ContactForm.new
     @user = current_user
   end
+
+  def about_us
+    @contact_form = ContactForm.new
+  end
 end

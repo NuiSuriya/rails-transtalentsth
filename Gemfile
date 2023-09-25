@@ -83,7 +83,7 @@ gem "activestorage"
 gem "image_processing"
 gem "devise"
 gem 'kaminari'
-gem "simple_calendar", "~> 2.4"
+gem 'simple_calendar', '~> 3.0', '>= 3.0.2'
 # gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
