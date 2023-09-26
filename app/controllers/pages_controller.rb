@@ -12,5 +12,6 @@ class PagesController < ApplicationController
 
   def about_us
     @contact_form = ContactForm.new
+    @blog_posts = BlogPost.order(date: :desc).first(3)
   end
 end
