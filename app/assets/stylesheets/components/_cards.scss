@@ -5,3 +5,29 @@
     border: none;
   }
 }
+
+.service-heading{
+  .card {
+    background: none;
+    border: none;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.service-content {
+  @media (max-width: 834px) {
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    h3 {
+      font-weight: 0.8rem;
+    }
+
+    p {
+      font-size: 0.7rem;
+    }
+  }
+}

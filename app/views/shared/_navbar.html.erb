@@ -10,7 +10,7 @@
     <div class=" collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto ">
         <li class="nav-item active">
-          <%= link_to "About Us", about_us_path ,class: 'nav-link mx-2'%>
+          <%= link_to "About Us", aboutus_path ,class: 'nav-link mx-2'%>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,13 +18,13 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li>
-              <%= link_to "Consult", "#", class: "dropdown-item" %>
+              <%= link_to "Consulting", services_consulting_path, class: "dropdown-item" %>
             </li>
             <li>
-              <%= link_to "Training", "#", class: "dropdown-item" %>
+              <%= link_to "Training", services_training_path, class: "dropdown-item" %>
             </li>
             <li>
-              <%= link_to "Speakers", "#", class: "dropdown-item" %>
+              <%= link_to "Speakers", services_speakers_path, class: "dropdown-item" %>
             </li>
           </ul>
         </li>
