@@ -23,7 +23,37 @@
     }
 
     h3 {
-      font-weight: 0.8rem;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+#speaker-cards {
+  .card {
+    border: none;
+    background: none;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+      transform: scale(1.2);
+      z-index: 100
+    }
+  }
+
+  h3 {
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: $blue
+  }
+
+  @media (max-width: 834px) {
+    h3 {
+      font-size: 1rem;
     }
 
     p {

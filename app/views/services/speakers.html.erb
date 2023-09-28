@@ -7,7 +7,7 @@
 
 <div class="service-heading">
   <%# TITLE %>
-  <div class="container mt-5">
+  <div class="container my-5">
     <div class='text-center'>
       <h1 class='my-5'>What we offer</h1>
       <p>We help businesses to assess, strategize, manage and communicate.
@@ -95,6 +95,35 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<%# SPEAKERS LIST%>
+<div id="speakers" class='gray-bg pt-5'>
+  <div class="container">
+    <h1 class='text-center mb-4'>Our Speakers</h1>
+
+    <div id="speaker-cards">
+      <%= link_to '#' , class: 'text-decoration-none' do %>
+        <div class="row p-5">
+          <% @speakers.each do |speaker| %>
+            <div class="col-12 col-md-4">
+              <div class="card p-lg-3">
+                <div class="card-img square-container"
+                  style="background-image: url('<%= cl_image_path speaker.photo.key %>')">
+                </div>
+                <div class="text-center mt-3 mb-5 px-md-3">
+                  <h3 class="card-title">
+                    <%= speaker.first_name.capitalize %> <%= speaker.last_name.capitalize %>
+                  </h3>
+                  <p class="card-text"><%= speaker.occupation %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

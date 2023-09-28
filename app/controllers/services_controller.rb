@@ -9,5 +9,6 @@ class ServicesController < ApplicationController
 
   def speakers
     @contact_form = ContactForm.new
+    @speakers = Speaker.all
   end
 end

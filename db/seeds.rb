@@ -11,4 +11,23 @@ admin: true)
 
 
 Testimonial.delete_all
-# puts 'Creating new testimonials'
+puts 'Creating new testimonials'
+
+10.times do
+  Testimonial.create!(
+    name: 'Hannah Schmitt',
+    detail: 'Design Director - Agoda',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas.'
+  )
+end
+
+Speaker.delete_all
+puts 'Creating new speakers'
+
+15.times do
+  Speaker.create!(
+    first_name: "Nikki",
+    last_name: "Phinyapincha",
+    occupation: "Chief Executive Officer"
+  )
+end
