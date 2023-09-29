@@ -8,9 +8,15 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-QKXYQK7S87');
+      document.addEventListener("turbolinks:load", function(event){
+        gtag('config', 'G-QKXYQK7S87', {
+          page_location: event.data.url,
+          page_path: event.srcElement.location.pathname,
+          page_title: event.srcElement.title
+        });
+      })
     </script>
-    
+
     <title>TranstalentsTH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>

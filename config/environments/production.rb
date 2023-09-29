@@ -2,11 +2,6 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.google_analytics = {
-    tracker: 'UA-409178933', # Replace with your tracking ID
-    anonymize_ip: true,       # Set to true if you want to anonymize IP addresses
-    debug: true              # Set to true for debugging in development environment
-  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

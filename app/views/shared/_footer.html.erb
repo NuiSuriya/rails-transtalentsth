@@ -2,39 +2,70 @@
   <div class="container">
     <div class="row pt-3">
       <div class="col-12 col-md-2">
-        <div class="text-start mb-3">
+        <div class="text-center text-lg-start mb-3">
           <%= link_to '#' do %>
-            <%= image_tag 'logo-white.png', alt: "TranstalentsTH", class: "img-fluid", style: 'max-width: 45%' %>
+            <%= image_tag 'logo-white.png', alt: "TranstalentsTH", class: "img-fluid", style: 'max-width: 50%' %>
           <% end %>
         </div>
       </div>
 
       <div class="col-12 col-md-10">
         <div class="row">
-          <div class="col-12 col-md-4">
-            <h6>Get in Touch</h6>
+          <div class="col-12 col-md-4 pe-md-5 mt-3 mt-lg-0">
+            <h6 class='text-center text-lg-start'>Get in Touch</h6>
+
+            <%# ADDRESS %>
+            <div class="d-flex">
+              <div class="pe-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C15.87 2 19 5.13 19 9C19 14.25 12 22 12 22C12 22 5 14.25 5 9C5 5.13 8.13 2 12 2ZM7 9C7 11.85 9.92 16.21 12 18.88C14.12 16.19 17 11.88 17 9C17 6.24 14.76 4 12 4C9.24 4 7 6.24 7 9ZM12 11.5C10.6193 11.5 9.5 10.3807 9.5 9C9.5 7.61929 10.6193 6.5 12 6.5C13.3807 6.5 14.5 7.61929 14.5 9C14.5 10.3807 13.3807 11.5 12 11.5Z" fill="white"/>
+                </svg>
+              </div>
+              <div class="align-self-center">
+                <div style="font-size: 0.9rem;">
+                  <p class='mb-2'><strong>Transtalents Consulting Group</strong></p>
+                  <p>3066-3068 Soi Ekkachai 109
+                    Ekkachai Rd., Kweng Bangbon, Khet Bangbon, Bangkok 10150</p>
+                </div>
+              </div>
+            </div>
 
             <%# EMAIL %>
-            <div class="d-flex">
-              <div class="pe-2">
+            <div class="d-flex mb-4">
+              <div class="pe-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" fill="white"/>
                 </svg>
               </div>
               <div class="align-self-center">
-                <div style="font-size: 0.9rem; margin-bottom: 20px;">Transtalents.th@gmail.com</div>
+                <div style="font-size: 0.9rem;">Transtalents.th@gmail.com</div>
+              </div>
+            </div>
+
+
+            <%# PHONE %>
+            <div class="d-flex">
+              <div class="pe-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.54 5C6.6 5.89 6.75 6.76 6.99 7.59L5.79 8.79C5.38 7.59 5.12 6.32 5.03 5H6.54ZM16.4 17.02C17.25 17.26 18.12 17.41 19 17.47V18.96C17.68 18.87 16.41 18.61 15.2 18.21L16.4 17.02ZM7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.51C21 15.96 20.55 15.51 20 15.51C18.76 15.51 17.55 15.31 16.43 14.94C16.33 14.9 16.22 14.89 16.12 14.89C15.86 14.89 15.61 14.99 15.41 15.18L13.21 17.38C10.38 15.93 8.06 13.62 6.62 10.79L8.82 8.59C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3Z" fill="white"/>
+                </svg>
+              </div>
+              <div class="align-self-center">
+                <div style="font-size: 0.9rem;">
+                  <p>+66(0) 652953699</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-3">
+          <div class="col-6 col-md-3 text-center text-lg-start mt-3 mt-lg-0">
             <h6>Service</h6>
             <p><%= link_to "Consult", "#", class: 'text-decoration-none text-white' %></p>
             <p><%= link_to "Training", "#", class: 'text-decoration-none text-white' %></p>
             <p><%= link_to "Speaker", "#", class: 'text-decoration-none text-white' %></p>
           </div>
 
-          <div class="col-12 col-md-3">
+          <div class="col-6 col-md-3 text-center text-lg-start mt-3 mt-lg-0">
             <h6>Articles</h6>
             <p><%= link_to "News", news_posts_path, class: 'text-decoration-none text-white' %></p>
             <p><%= link_to "Events", "#", class: 'text-decoration-none text-white' %></p>
@@ -42,11 +73,11 @@
             <p><%= link_to "Blogs", blog_posts_path, class: 'text-decoration-none text-white' %></p>
           </div>
 
-          <div class="col-12 col-md-2 d-flex justify-content-md-end">
+          <div class="col-12 col-md-2 d-flex justify-content-center justify-content-md-end">
             <div>
               <%= link_to "https://www.facebook.com/TransTalents",
                 target: '_blank', class: "me-3" do %>
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="34" viewBox="0 0 37 35" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 37 35" fill="none">
                   <path d="M32.6291 0H4.07864C1.83539 0 0 1.75 0 3.88889V31.1111C0 33.2519 1.83539 35 4.07864 35H18.3539V21.3889H14.2752V16.5764H18.3539V12.5903C18.3539 8.3825 20.8255 5.42694 26.034 5.42694L29.7108 5.43083V10.4961H27.2698C25.2427 10.4961 24.4718 11.9467 24.4718 13.2922V16.5783H29.7088L28.5505 21.3889H24.4718V35H32.6291C34.8724 35 36.7078 33.2519 36.7078 31.1111V3.88889C36.7078 1.75 34.8724 0 32.6291 0Z" fill="white"/>
                 </svg>
               <% end %>
@@ -54,7 +85,7 @@
             <div>
               <%= link_to "https://www.linkedin.com/in/nikki-phinyapincha/",
                 target: '_blank', class: "" do %>
-                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="35" viewBox="0 0 37 35" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 37 35" fill="none">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M5.24396 0C3.85318 0 2.51936 0.526784 1.53592 1.46447C0.552488 2.40215 0 3.67392 0 5V30C0 31.3261 0.552488 32.5979 1.53592 33.5355C2.51936 34.4732 3.85318 35 5.24396 35H31.4638C32.8546 35 34.1884 34.4732 35.1718 33.5355C36.1553 32.5979 36.7078 31.3261 36.7078 30V5C36.7078 3.67392 36.1553 2.40215 35.1718 1.46447C34.1884 0.526784 32.8546 0 31.4638 0H5.24396ZM8.13339 10.7425C8.96438 10.7425 9.76134 10.4277 10.3489 9.86748C10.9365 9.30722 11.2667 8.54733 11.2667 7.755C11.2667 6.96267 10.9365 6.20278 10.3489 5.64252C9.76134 5.08225 8.96438 4.7675 8.13339 4.7675C7.3024 4.7675 6.50544 5.08225 5.91783 5.64252C5.33023 6.20278 5.00012 6.96267 5.00012 7.755C5.00012 8.54733 5.33023 9.30722 5.91783 9.86748C6.50544 10.4277 7.3024 10.7425 8.13339 10.7425ZM10.7554 29.5325V13.085H5.51141V29.5325H10.7554ZM14.2374 13.085H19.4813V15.2875C20.2548 14.1325 21.9539 12.5775 25.1133 12.5775C28.8838 12.5775 30.9315 14.96 30.9315 19.4925C30.9315 19.71 30.9525 20.7025 30.9525 20.7025V29.53H25.7085V20.705C25.7085 19.4925 25.4411 17.11 22.6146 17.11C19.7855 17.11 19.5469 20.105 19.4813 22.065V29.53H14.2374V13.085Z" fill="white"/>
                 </svg>
               <% end %>
