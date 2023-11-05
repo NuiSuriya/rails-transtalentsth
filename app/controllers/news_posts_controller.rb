@@ -1,8 +1,8 @@
 class NewsPostsController < ApplicationController
   before_action :set_news_post, only: :show
   def index
-    @pinned_news_posts = NewsPost.where(is_pinned: true).limit(3)
-    @news_posts = NewsPost.order(date: :desc).page(params[:page]).per(6)
+    @pinned_news_posts = NewsPost.where(is_pinned: true, draft: false).limit(3)
+    @news_posts = NewsPost.where(draft: false).order(date: :desc).page(params[:page]).per(6)
   end
 
   def show
@@ -23,7 +23,7 @@ class NewsPostsController < ApplicationController
   private
 
   def set_news_post
-    @news_post = NewsPost.friendly.find(params[:id])
+    @news_post = NewsPost.where(draft: false).friendly.find(params[:id])
   end
 
 end

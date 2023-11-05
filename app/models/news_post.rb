@@ -26,6 +26,7 @@ class NewsPost < ApplicationRecord
     is_pinned
   end
 
+
   def to_param
     slug
   end

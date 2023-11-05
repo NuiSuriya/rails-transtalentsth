@@ -21,8 +21,9 @@ module Avo
 
       def fields
         field :id, as: :id
+        field :draft, as: :boolean, name: 'Draft'
         field :title, as: :text, only_on: %i[show new edit]
-        field :slug, as: :text, only_on: %i[new edit], name: 'URL', placeholder: 'Create url here'
+        field :slug, as: :text, only_on: %i[new edit], name: 'Page URL', placeholder: 'Create url here'
         field :excerpt, as: :text, only_on: :index, link_to_resource: true
         field :category, as: :belongs_to
         field :photos, as: :files, are_images: true
