@@ -9,7 +9,7 @@ class BlogPost < ApplicationRecord
   has_many_attached :photos
   has_many_attached :trix_attachments
 
-  validates :title, :content, :date, :photos, :min_to_read, presence: true
+  validates :title, :slug, :content, :date, :photos, :min_to_read, presence: true
 
   friendly_id :slug, use: :slugged
 
