@@ -1,6 +1,6 @@
 <%# BANNER %>
 <div style="margin-top: 100px">
-  <div class="banner-darker" class='mt-5 mt-lg-2' style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('<%= image_path 'speakers-banner.jpg'%>')">
+  <div class='page-banner mt-5 mt-lg-2' style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('<%= image_path 'speakers-banner.jpg'%>')">
     <h1>Training</h1>
   </div>
 </div>
@@ -110,7 +110,7 @@
           <% @speakers.each do |speaker| %>
             <div class="col-12 col-md-4">
               <div class="card p-lg-3">
-              
+
                 <% if speaker.photo.key? %>
                 <div class="card-img square-container"
                   style="background-image: url('<%= cl_image_path speaker.photo.key %>')">

@@ -153,6 +153,7 @@ GEM
       sassc (~> 2.0)
     friendly_id (5.5.0)
       activerecord (>= 4.0.0)
+    geocoder (1.8.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     google-analytics-rails (1.1.1)
@@ -391,6 +392,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 6.1)
   friendly_id
+  geocoder
   google-analytics-rails
   i18n
   image_processing

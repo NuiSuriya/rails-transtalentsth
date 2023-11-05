@@ -10,6 +10,8 @@ class NewsPost < ApplicationRecord
   has_many_attached :trix_attachments
 
   validates :title, :slug, :content, :date, :photos, :min_to_read, presence: true
+  validates :slug, uniqness: true
+
   # validates :vdo_url, format: { with: URI::DEFAULT_PARSER.make_regexp(%w[http https]), message: 'must be a valid URL' }
 
   friendly_id :slug, use: :slugged

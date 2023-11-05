@@ -92,3 +92,4 @@ gem 'omniauth-google-oauth2'
 gem 'google-analytics-rails'
 gem 'friendly_id'
 gem 'i18n'
+gem "geocoder"
