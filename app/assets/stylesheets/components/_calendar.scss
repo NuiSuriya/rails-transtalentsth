@@ -1,7 +1,7 @@
 .simple-calendar{
 
   .table-striped > tbody > tr:nth-of-type(odd) > * {
-    --bs-table-bg-type: white;
+    --bs-table-bg-type: none;
   }
 
   .table {
@@ -14,37 +14,28 @@
 
   td{
     border: none;
-    background: white;
+    background: none;
   }
 
   .day {
     height: 5px;
+    width: 7px;
   }
 
   .prev-month{
     color: #BDBDBD;
+    background: none;
   }
 
   .next-month{
     color: #BDBDBD;
+    background: none;
   }
 
   .today {
-    // color: white;
+    color: white;
     font-weight: 700;
-    // background: $pink;
-    width: 32px;
-    height: 32px;
-    margin-top: 3px;
-    padding-top: 1px;
-    padding-left: 1px;
-    padding-right: 1px;
-    border: 2.5px solid $pink; /* Change border color and size as desired */
-    border-radius: 50%; /* Makes it a circle */
-    display: inline-block
-  }
-
-  .has-events {
+    background: $pink;
     width: 32px;
     height: 32px;
     margin-top: 3px;
@@ -53,7 +44,21 @@
     padding-right: 1px;
     border: 2.5px solid $blue; /* Change border color and size as desired */
     border-radius: 50%; /* Makes it a circle */
-    display: inline-block
+    display: inline-block;
+  }
+
+  .has-events {
+    // color: white;
+    // background: $blue;
+    width: 32px;
+    height: 32px;
+    margin-top: 3px;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border: 2.5px solid $blue; /* Change border color and size as desired */
+    border-radius: 50%; /* Makes it a circle */
+    display: inline-block;
   }
 }
 

@@ -19,9 +19,11 @@ class NewsPostsController < ApplicationController
     @related_posts = NewsPost.where(id: related_post_ids)
   end
 
+
   private
 
   def set_news_post
-    @news_post = NewsPost.find(params[:id])
+    @news_post = NewsPost.friendly.find(params[:id])
   end
+
 end

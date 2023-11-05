@@ -4,6 +4,9 @@ Avo.configure do |config|
   config.root_path = '/admin'
   config.current_user_method = :current_user
   config.resource_controls_placement = :left
+
+
+
   # used only when you have custom `map` configuration in your config.ru
   # config.prefix_path = "/internal"
 
