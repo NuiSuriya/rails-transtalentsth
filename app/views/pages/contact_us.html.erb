@@ -6,27 +6,30 @@
 </div>
 
 <%# CONTACT DETAILS %>
-<div class="container">
-  <div class="row">
-    <h1 class="text-blue">Transtalents Consulting Group</h1>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-12">
+      <h1 class="text-blue mb-0">Transtalents</h1>
+      <h1 class="text-blue mb-4">Consulting Group</h1>
 
-    <p><strong>Address:</strong></p>
-    <p>
-      3066-3068 Soi Ekkachai 109
-      Ekkachai Rd., Kweng Bangbon, Khet Bangbon, Bangkok 10150
-    </p>
+      <p><strong>Address:</strong></p>
+      <p class="mb-1">3066-3068 Soi Ekkachai 109 Ekkachai Rd.,</p>
+      <p>Kweng Bangbon, Khet Bangbon, Bangkok 10150</p>
 
-    <p><strong>Email:</strong></p>
-    <p>nikki@transtalents.co</p>
+      <p><strong>Email:</strong></p>
+      <p>nikki@transtalents.co</p>
 
-    <p><strong>Phone:</strong></p>
-    <p>+66(0)652953699</p>
+      <p><strong>Phone:</strong></p>
+      <p>+66(0)652953699</p>
+    </div>
 
     <%# MAP %>
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-      data-map-marker-value="<%= @marker.to_json %>">
+    <div class="col-lg-5 col-md-12 mt-lg-0 mt-md-5">
+      <div id="map"
+        data-controller="map"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-map-marker-value="<%= @marker.to_json %>">
+      </div>
     </div>
   </div>
 
