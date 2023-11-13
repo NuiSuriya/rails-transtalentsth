@@ -29,11 +29,11 @@
                       label_html: {class: 'text-blue'},
                       input_html: {class: 'form-input'} %>
           <%= f.button :submit, "Submit",
-                      class: 'btn-submit' %>
+                      class: 'btn-submit',
+                      data: { target: "sweet-alert.submit", action: "click->sweet-alert#submitForm"} %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
-<%# , click->sweet-alert#submitForm %>

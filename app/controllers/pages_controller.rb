@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def contact_us
+    @contact_form = ContactForm.new
     data = Geocoder.search('3066-3068 Ekkachai Soi 109');
     latitude = data.first.coordinates[0]
     longtitude = data.first.coordinates[1]
