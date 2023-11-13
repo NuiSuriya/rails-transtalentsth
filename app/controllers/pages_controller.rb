@@ -15,9 +15,13 @@ class PagesController < ApplicationController
   end
 
   def contact_us
-    address = '3066-3068 Soi Ekkachai 109 Ekkachai Rd., Kweng Bangbon,
-              Khet Bangbon, Bangkok 10150'
-    
+    data = Geocoder.search('3066-3068 Ekkachai Soi 109');
+    latitude = data.first.coordinates[0]
+    longtitude = data.first.coordinates[1]
+    @marker = {
+      lat: latitude,
+      lng: longtitude
+    }
   end
 
   private
