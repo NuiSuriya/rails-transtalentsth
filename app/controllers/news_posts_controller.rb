@@ -3,6 +3,7 @@ class NewsPostsController < ApplicationController
   def index
     @pinned_news_posts = NewsPost.where(is_pinned: true, draft: false).limit(3)
     @news_posts = NewsPost.where(draft: false).order(date: :desc).page(params[:page]).per(6)
+    @contact_form = ContactForm.new
   end
 
   def show

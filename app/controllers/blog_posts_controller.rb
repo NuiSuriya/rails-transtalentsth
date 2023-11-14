@@ -3,6 +3,7 @@ class BlogPostsController < ApplicationController
   def index
     @pinned_blog_posts = BlogPost.where(is_pinned: true, draft: false)
     @blog_posts = BlogPost.where(draft: false).order(date: :desc).page(params[:page]).per(6)
+    @contact_form = ContactForm.new
   end
 
   def show
