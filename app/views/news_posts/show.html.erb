@@ -18,6 +18,20 @@
       </div>
     </div>
 
+    <%# Project Details %>
+    <div id="project-content" class="mt-5">
+      <% attributes_to_display = [:project, :period, :language, :client, :area] %>
+
+      <% if attributes_to_display.all? { |attr| @news_post.send(attr).present? } %>
+        <% attributes_to_display.each do |attr| %>
+          <h6>
+            <strong><%= attr.to_s.capitalize %>:</strong>  
+              <%= attr != :area ? @news_post.send(attr).capitalize : @news_post.send(attr) %>
+            </h6>
+        <% end %>
+      <% end %>
+    </div>
+
 
     <%# FIRST PHOTO %>
     <div class='my-5'>
