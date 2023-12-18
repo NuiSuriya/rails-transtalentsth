@@ -13,6 +13,7 @@ export default class extends Controller {
     const imageUrl = image.style.backgroundImage.slice(5, -2); // Extract the URL from style
     this.fullImageTarget.src = imageUrl;
     this.modalTarget.style.display = "grid";
+
   }
 
   closeModal() {

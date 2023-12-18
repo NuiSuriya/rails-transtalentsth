@@ -6,8 +6,10 @@
 
     <% @blog_post.photos.each do |photo| %>
       <swiper-slide>
-        <div class="photos" style="background-image: url('<%= cl_image_path photo.key %>');"
-          data-action="click->image-modal#openModal">
+        <div class="container d-none">
+          <div class="photos" style="background-image: url('<%= cl_image_path photo.key %>');"
+            data-action="click->image-modal#openModal">
+          </div>
         </div>
       </swiper-slide>
     <% end %>
