@@ -25,6 +25,11 @@ module Avo
         field :slug, as: :text, only_on: %i[new edit], name: 'Page URL', placeholder: 'Create url here'
         field :excerpt, as: :text, only_on: :index, link_to_resource: true
         field :category, as: :belongs_to
+        field :project, as: :text, as: :text, name: 'Project Name'
+        field :period, as: :text, as: :text, name: 'Period of Project'
+
+        field :language, as: :select, options: { "English": :english, "Thai": :thai }
+
         field :photos, as: :files, are_images: true
         field :vdo_url, as: :text, name: 'Embed VDO Link', placeholder: 'LinkedIn, Facebook, YouTube etc.'
         field :content, as: :trix, attachment_key: :trix_attachments
