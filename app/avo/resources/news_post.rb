@@ -28,7 +28,7 @@ module Avo
         field :project, as: :text, name: 'Project Name'
         field :period, as: :text, name: 'Period of Project'
 
-        field :language, as: :select, options: { "English": :english, "Thai": :thai }
+        field :language, as: :select, options: { "English": :english, "Thai": :thai, "English / Thai": :both }
         field :client, as: :text, name: "Client's name"
         field :area, as: :text, name: "Area of Project"
 
