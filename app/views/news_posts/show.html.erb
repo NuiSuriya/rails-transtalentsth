@@ -25,8 +25,12 @@
       <% if attributes_to_display.all? { |attr| @news_post.send(attr).present? } %>
         <% attributes_to_display.each do |attr| %>
           <h6>
-            <strong><%= attr.to_s.capitalize %>:</strong>
-              <%= @news_post.send(attr) %>
+            <strong><%= attr == :client ? "Host" : attr.to_s.capitalize %>:</strong>
+              <% if attr == :language %>
+                <%= @news_post.send(attr) == "both" ? "English / Thai" : @news_post.send(attr).capitalize  %>
+              <% else %>
+                <%= @news_post.send(attr)  %>
+              <% end %>
             </h6>
         <% end %>
       <% end %>
