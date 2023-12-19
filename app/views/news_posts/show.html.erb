@@ -21,7 +21,6 @@
     <%# Project Details %>
     <div id="project-content" class="mt-5">
       <% attributes_to_display = [:project, :period, :language, :client, :area] %>
-
       <% if attributes_to_display.all? { |attr| @news_post.send(attr).present? } %>
         <% attributes_to_display.each do |attr| %>
           <h6>
