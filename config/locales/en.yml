@@ -35,8 +35,8 @@ en:
     pagination:
       first: "&laquo; Newer"
       last: "Older &raquo;"
-      previous: "&lsaquo; Prev"
-      next: "Next &rsaquo;"
+      previous: "&lsaquo; Newer"
+      next: "Older &rsaquo;"
       truncate: "&hellip;"
   helpers:
     page_entries_info:
